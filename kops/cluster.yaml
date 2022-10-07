@@ -1,0 +1,15 @@
+apiVersion: kops.k8s.io/v1alpha2
+kind: InstanceGroup
+metadata:
+  labels:
+    kops.k8s.io/cluster: prd.aws.rolwynquadras.me
+  name: bastions
+spec:
+  associatePublicIp: false
+  image: ami-08c40ec9ead489470
+  machineType: t3.micro
+  maxSize: 1
+  minSize: 1
+  role: Bastion
+  subnets:
+  - utility-us-east-1a
